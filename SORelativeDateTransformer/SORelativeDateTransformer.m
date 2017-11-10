@@ -20,7 +20,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"SORelativeDateTransformer" withExtension:@"bundle"];
-        bundle = [[NSBundle alloc] initWithURL:url];
+        if (url != nil) {
+            bundle = [[NSBundle alloc] initWithURL:url];
+        } else {
+            bundle = [NSBundle bundleWithIdentifier:@"org.cocoapods.SORelativeDateTransformer"];
+        }
     });
     return bundle;
 }
