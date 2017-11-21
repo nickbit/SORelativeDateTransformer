@@ -23,7 +23,9 @@
         if (url != nil) {
             bundle = [[NSBundle alloc] initWithURL:url];
         } else {
-            bundle = [NSBundle bundleWithIdentifier:@"org.cocoapods.SORelativeDateTransformer"];
+            NSURL *frameworkURL = [[NSBundle bundleForClass:self] bundleURL];
+            NSURL *bundleURL = [frameworkURL URLByAppendingPathComponent:@"SORelativeDateTransformer.bundle"];
+            bundle = [NSBundle bundleWithURL:bundleURL];
         }
     });
     return bundle;
