@@ -21,14 +21,6 @@
     dispatch_once(&onceToken, ^{
         NSURL *url = [[NSBundle bundleForClass:self] URLForResource:@"SORelativeDateTransformer" withExtension:@"bundle"];
         bundle = [NSBundle bundleWithURL:bundleURL];
-//        NSURL *url = [[NSBundle mainBundle] URLForResource:@"SORelativeDateTransformer" withExtension:@"bundle"];
-//        if (url != nil) {
-//            bundle = [[NSBundle alloc] initWithURL:url];
-//        } else {
-//            NSURL *frameworkURL = [[NSBundle bundleForClass:self] bundleURL];
-//            NSURL *bundleURL = [frameworkURL URLByAppendingPathComponent:@"SORelativeDateTransformer.bundle"];
-//            bundle = [NSBundle bundleWithURL:bundleURL];
-//        }
     });
     return bundle;
 }
