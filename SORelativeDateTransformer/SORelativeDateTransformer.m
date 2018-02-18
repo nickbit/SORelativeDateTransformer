@@ -20,7 +20,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSURL *url = [[NSBundle bundleForClass:self] URLForResource:@"SORelativeDateTransformer" withExtension:@"bundle"];
-        bundle = [NSBundle bundleWithURL:bundleURL];
+        bundle = [NSBundle bundleWithURL:url];
     });
     return bundle;
 }
